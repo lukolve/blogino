@@ -1,0 +1,33 @@
+<div class="w3-top w3-animate-top">
+  <div class="w3-bar w3-light-grey">
+  <div class="w3-auto w3-animate-opacity">
+		<?php 
+			$icount=0;
+
+			foreach($obj->zones as $x=>$x_value)
+			{
+			if ($icount<=6) { 
+		?>
+				<a href="./index.php?channel=<?php echo $x; ?>" class="w3-bar-item w3-button w3-padding-16 w3-underline-color" title="<?php echo $obj->zones_info[$x];?>"><?php echo $x_value; ?></a>
+		<?php 
+			} 
+			$icount++;
+			} 
+		?>
+	<div class="w3-dropdown-hover">
+	<button class="w3-button  w3-padding-16">?</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+	<input type="text" class="w3-bar-item w3-input w3-padding-16 w3-right" style="background-color: #00ffff;" placeholder="Search..">
+    <a href="?page=contacts" class="w3-bar-item w3-button w3-padding-16 w3-underline-color">Kontakty</a>
+    <a href="?page=images" class="w3-bar-item w3-button w3-padding-16  w3-underline-color">Fotky</a>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+	<input type="submit" name="submit_btn" value="Logout" class="w3-bar-item w3-button w3-padding-16">
+	</form>
+	</div>
+    </div>
+  </div>
+  </div>
+  <div class="w3-topbarline"></div>
+</div>
+
+<br><br>

@@ -1,0 +1,7 @@
+CREATE DATABASE blogino;
+CREATE USER 'blogino'@'localhost'
+IDENTIFIED BY 'LukasPassword';
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER
+ON blogino.*
+TO blogino@localhost;
+FLUSH PRIVILEGES;

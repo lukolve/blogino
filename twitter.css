@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ==============================================================
+	Twitter
+   ============================================================== */
+
+.tweet ul {
+	CLEAR: left; FONT-SIZE: 12px;  PADDING: 0.0em; MARGIN: 0.0em;
+	WIDTH: inherit;
+	font-family: verdana, tahoma, arial, helvetica, sans-serif;
+	font:200 16px/16px sans-serif;
+	
+	border-left: 1px dotted #dddddd;
+	border-right: 1px dotted #dddddd;
+}
+.tweet LI {
+	PADDING-BOTTOM: 20px; PADDING-TOP: 20px;  
+	PADDING-LEFT: 5px; PADDING-RIGHT: 5px;
+	
+	DISPLAY: block;
+	
+	TEXT-ALIGN: left; TEXT-DECORATION: none;
+	/*LIST-STYLE-TYPE: none;*/
+	
+	border-bottom: 1px dotted #dddddd;
+	
+	COLOR: black; 
+
+}
+/*
+.tweet LI A {
+	
+	DISPLAY: block; */
+	/* FONT-SIZE: 11px;*/  
+/*	COLOR: black; 
+	TEXT-ALIGN: left; TEXT-DECORATION: none;
+}
+*/
+.tweet LI:hover {
+	TEXT-ALIGN: left; TEXT-DECORATION: none;
+	
+	DISPLAY: block;
+	
+	color: black;
+	box-shadow: 0px 0px 0px 3px rgb(204, 204, 204);
+		  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,250,64,.1); /* Black w/ opacity */
+	background-size: 100% 100%;
+	
+	/* background-color: #eef; */
+	/* border-bottom: 1px dotted black; */
+	/* FONT-SIZE: 11px;*/
+	/*PADDING-LEFT: 7px; */
+}
+
+
+.tweet-avatar {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    border-radius: 50% 50% 50% 50%;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+    box-shadow: 0px 0px 0px 3px rgb(204, 204, 204);
+}
+.tweet-reply-link {
+    position: relative;
+    top: 60px;
+    left: 10px;
+    font-size: 13px;
+    width: 50px;
+    text-align: center;
+    color: rgb(204, 204, 204);
+}
+.tweet-author {
+	position: relative;
+    font-weight: bold;
+    font-size: 16px;
+    right: 100px;
+}
+.tweet-date-link {
+    position: relative;
+    top: 5px;
+    right: 10px;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
+}
+.tweet-text {
+	position: relative;
+    font-weight: normal;
+    font-size: 16px;
+    top: 20px;
+    left: 100px;
+}

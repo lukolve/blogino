@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ==============================================================
+	Notifications
+   ============================================================== */
+
+.notify {
+	overflow:			auto;
+}
+.notify .avatar {
+	float:				left;
+	width:				48px;
+	height: 			48px;
+	margin: 			3px;
+	padding:			1px;
+	border: 			1px solid #CCC;
+	outline: 			#EFEFEF solid 2px
+}
+.notify .bubble {
+	float:				left;
+	position:			relative;
+	margin:				7px -1px 0;
+}
+.notify .text {
+	float:				left;
+	border:				1px solid #d7d59a;
+	width:				750px;
+	background-color:	#FEFDDF;
+	margin:				3px 3px 3px 0px;
+	padding:			5px 5px 5px 10px;
+	-moz-border-radius:	4px;
+	-webkit-border-radius: 4px;
+	font-size: 			15px;
+	font-weight: 		bold;
+	font-family: 		"Trebuchet MS";
+}
+.notify .text span {
+	font-family: 		Verdana; 
+	font-size:			10px;
+	font-weight: 		normal;
+}
