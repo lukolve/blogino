@@ -2,12 +2,6 @@
 ini_set( "display_errors", true );
 date_default_timezone_set( "Europe/Bratislava" );  // http://www.php.net/manual/en/timezones.php
 
-//define('DB_NAME', 'blogino');
-//define('DB_USER', 'lukas');
-//define('DB_PASSWORD', 'PassWord');
-//define('DB_HOST', 'localhost');
-//define('CONTENT_DIR', '/usr/share/beautys/');
-
 $obj->warp = 1;
 
 $obj->maintenance = 0;
@@ -20,13 +14,13 @@ $obj->refresh = 1;
 $obj->track = ""; 
 
 // databaza
-$obj->host = "localhost"; // 127.0.0.1
-$obj->username = "blogino"; 
-$obj->password = "Lukas11!";
-$obj->table = "blogino";
+$obj->host = "127.0.0.1:3307"; // 127.0.0.1
+$obj->username = "lukas"; 
+$obj->password = "Pi123456789!";
+$obj->table = "zones";
 
 // administrator
-$obj->adminemail = array('lukves@outlook.com' => 'admin');
+$obj->adminemail = array('luuvki@gmail.com' => 'admin');
 
 // meno zony => viditelny popisok
 $obj->zones = array(
@@ -48,8 +42,6 @@ $obj->zones_info = array(
 'hry' => 'herný svet',
 'kultura' => 'kultúrne okienko',
 'life' => 'o živote a všeličom'); 
-
-// $obj->reset_zones = "lukas11";
 
 $obj->title = "BLOGINO"; 
 $obj->slogan = "rýchle blogovanie..";

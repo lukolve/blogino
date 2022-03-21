@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<!-- vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4:
-
-	Copyright (c) 2013 - 2020  Lukas Veselovsky
-	All rights reserved.
-
-The Beauty-Zones software is licensed under the open source (revised) BSD license, one of the most flexible and liberal licenses available. 
-Third-party open source libraries we include in our download are released under their own licenses.
-!-->
 <?php
 session_start();
 
@@ -29,88 +20,94 @@ include 'init.php';
 ?>
 <html>
 <head>
-<title><?php echo $obj->title . " " . $obj->slogan; ?></title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="reset.css" />
-<!--link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"!-->
-<link rel="stylesheet" href="w3.css">
-<link rel="stylesheet" href="other.css" />
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="js/jPages/css/jPages.css">
-<link rel="stylesheet" href="js/jPages/css/animate.css">
-  <script type="text/javascript" src="js/jPages/js/jquery-1.8.2.min.js"></script>
-  <script type="text/javascript" src="js/jPages/js/jPages.js"></script>
-  <script type="text/javascript" src="js/jPages/js/highlight.pack.js"></script>
-  <script type="text/javascript" src="js/jPages/js/tabifier.js"></script>
-  <script type="text/javascript" src="js/jPages/js/js.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
- <script>
-  /* when document is ready */
-  $(function(){
-  /*
-   * initiate the plugin without buttons and numeration
-   * setting midRange to 15 to prevent the breaks "..."
-   */
-   $("div.holder").jPages({
-    containerID : "itemContainer",
-    first       : false,
-    previous    : false,
-    next        : false,
-    last        : false,
-    perPage    : 7,
-    links       : "blank"
-  });
- });
-  </script>
-  <style type="text/css">
-  .holder {
-    margin: 15px 0;
-  }
-  .holder a {
-    display: inline-block;
-    cursor: pointer;
-    margin: 0 5px;
-    padding: 4px;
-    border-radius: 50%;
-    background-color: #D4EE5E;
-  }
-  .holder a:hover {
-    background-color: #222;
-    color: #fff;
-  }
-  .holder a.jp-previous { margin-right: 15px; }
-  .holder a.jp-next { margin-left: 15px; }
-  .holder a.jp-current, a.jp-current:hover {
-    color: #FF4242;
-    font-weight: bold;
-  }
-  .holder a.jp-disabled, a.jp-disabled:hover {
-    color: #bbb;
-  }
-  .holder a.jp-current, a.jp-current:hover,
-  .holder a.jp-disabled, a.jp-disabled:hover {
-    cursor: default;
-    background-color: #FF4242;
-  }
-  .holder span { margin: 0 5px; }
-  
-.w3-underline-color:hover {
+<style>
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+#header {
+  background-color: #f1f1f1;
+  padding: 10px 10px;
+  color: black;
+  text-align: center;
+  font-size: 90px; 
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: 0.2s;
 }
-.w3-hide-custom{display:block!important}
-.w3-show-custom{display:none!important}
-@media (max-width:800px){	
-.w3-hide-custom{display:none!important}
-.w3-show-custom{display:block!important}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
 }
-  </style>
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+</style>
+    <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js" ></script>
+<script>
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
 </head>
+<body  onload="myNotify('Refresh Page'); startTime()">
 
-<body>
+<div id="header">BLOGINO</div>
 
+<div class="container" style="max-width:500px; margin-top:170px; margin-bottom: 50px;">
 <?php
-
 if ($_POST['submit_btn']=="Sign In") {
 	$_SESSION['viewpage']="";
 	$_SESSION['loginuser'] = $obj->write_login($_POST); 
@@ -121,29 +118,37 @@ if ($_POST['submit_btn']=="Sign In") {
 	exit;
 }
 
-if ($_POST['submit_btn']=="Register") {
-	if (!empty($_REQUEST['captcha'])) {
-		if (empty($_SESSION['captcha']) || trim(strtolower($_REQUEST['captcha'])) != $_SESSION['captcha']) {
-			$captcha_message = "Invalid captcha";
-			$captcha_style = "background-color: #FF606C";
-		} else {
-			$captcha_message = "Valid captcha";
-			$captcha_style = "background-color: #CCFF99";
-			$obj->write_registration($_POST);
-		}
-		$request_captcha = htmlspecialchars($_REQUEST['captcha']);
-		unset($_SESSION['captcha']);
-	}
-}
-
 if (($_SESSION['loginuser']!=null) && ($obj->IfExistUser($_SESSION['loginuser'])==1)) {
-	include('index-online.php');
+	include('online.php');
 }
 	else {
-		$page = isset( $_GET['page'] ) ? "index-new.php" : "index-rss.php";
+		$page = isset( $_GET['page'] ) ? "formular.php" : "rss.php";
 		include($page);
 	}
 ?>
+</div>
+
+<div id="snackbar"></div>
+
+<script>
+function myNotify(str) {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  x.innerHTML = str;
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("header").style.fontSize = "30px";
+  } else {
+    document.getElementById("header").style.fontSize = "90px";
+  }
+}
+</script>
 
 </body>
 </html>
