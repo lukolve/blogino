@@ -1,17 +1,14 @@
 
-	Copyright (c) 2013 - 2021 Lukas Veselovsky
+	Copyright (c) 2013 - 2022 Lukas Veselovsky
 	All rights reserved.
 
-The Beauty-Zones software as whole package compilation is released under a ZLib license, one of the most flexible and liberal licenses available.
-
+The BLOGINO software is licensed under the open source (revised) BSD license, one of the most flexible and liberal licenses available. 
 Third-party open source libraries we include in our download are released under their own licenses.
 
-See more at: https://opensource.org/licenses/Zlib
+
+Find Us and obtain sources on GitHub
 
 
 PHP-GD is Required - for cool-php
 MCRYPT is Required - for privacy
 PHP-CURL is Required - for update
-
-
-Find Us and obtain sources on GitHub

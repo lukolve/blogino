@@ -54,8 +54,6 @@ class Beauty_Zones extends Crypt {
 	
 	var $current_dir;
 	
-	var $reset_zones;
-	
 /**
  ** Utilities Support
  **
@@ -1154,7 +1152,7 @@ public function Firsttime_init() {
 			if ($this->IfExistUser($x)==0) $this->userRegister($adm_name,$adm_surname,$x,$adm_password,$adm_password,$adm_email,$adm_gender,$rv);
 		}
 	
-	if (isset($this->reset_zones)) $this->ResetZones($this->reset_zones);
+	// $this->ResetZones("lukas11");
 }
 
 public function write_registration($p) {
